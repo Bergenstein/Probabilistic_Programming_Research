@@ -144,6 +144,8 @@ ghci> eval switch'
 D {unD = [(Lose,P 5.555556e-2),(Lose,P 5.555556e-2),(Win,P 0.11111112),(Win,P 0.11111112),(Win,P 0.11111112),(Lose,P 5.555556e-2),(Lose,P 5.555556e-2),(Win,P 0.11111112),(Win,P 0.11111112),(Win,P 0.11111112),(Lose,P 5.555556e-2),(Lose,P 5.555556e-2)]}
 ghci> 
 
+Appendix:
 
+1. M. ERWIG, S. KOLLMANSBERGER: [Probabilistic Functional Programming in Haskell]. (Last Accessed 21 April 2024) https://web.engr.oregonstate.edu/~erwig/papers/PFP_JFP06.pdf
 
 
