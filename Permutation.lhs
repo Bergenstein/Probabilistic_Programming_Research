@@ -9,6 +9,9 @@ Reference: This code file is just reimplementation of this paper: [1]
 > select (x:xs) = return (x, xs) <<>> do 
 >                               {(y,ys) <- select xs; return (y, x:ys)}
 
+> perms :: MonadNondet m => [a] -> m [a]
+> perms [] = return []
+> perms xs = do {(y,ys) <- select xs; zs <- perms ys; return (y:zs)}
 
 Appendix:
 1. J. Gibbon, R. Hinze [Just do it: Simple monadic equational reasoning]https://www.cs.ox.ac.uk/publications/publication4877-abstract.html
