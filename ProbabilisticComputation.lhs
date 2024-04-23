@@ -17,10 +17,6 @@ Reference: This code file is just reimplementation of this paper: [1]
 
 (<!<) ::  (this operators mean) P (<!<) Q (>!>) R = P & Q v Q' & R from Hoare paper [2] but with slighly different notation: 
 
-infixl 7 <!<
--- Define the custom operator for probabilistic choice
-infixl 7 <!<
-
 > (<!<) :: MonadProb m => m a -> Prob -> m a -> m a
 > (<!<) mx p my = choice p mx my
 
