@@ -7,8 +7,11 @@ Reference: This code file is just reimplementation of this paper: [1]
 > class Monad m => MonadFail' m where 
 >   fail' :: m a 
 
-> class MonadAlt m where 
->   (<<>>) :: m a -> m a -> m a 
+% > class MonadAlt m where 
+% >   (<<>>) :: m a -> m a -> m a 
+
+> class Monad m => MonadAlt m where
+>   (<<>>) :: m a -> m a -> m a
 
 subject to:
 1. associativity of operator <<>>: (m <<>> n) <<>> p = m <<>> (n <<>> p)
