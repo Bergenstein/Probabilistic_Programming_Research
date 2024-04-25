@@ -11,7 +11,16 @@ Reference: This code file is just reimplementation of this paper: [1]
 % >   (<<>>) :: m a -> m a -> m a 
 
 > class Monad m => MonadAlt m where
->   (<<>>) :: m a -> m a -> m a
+>   (<<>>) :: m a -> m a -> m a -- <<>> combines two monadic operations into one, encapsulating notion of having choices in computations. 
+
+> instance MonadAlt Maybe where
+>     Nothing <<>> my = my
+>     mx <<>> Nothing = mx
+>     Just x <<>> Just y = Just x
+
+> instance MonadFail' Maybe where
+>     fail' = Nothing
+
 
 subject to:
 1. associativity of operator <<>>: (m <<>> n) <<>> p = m <<>> (n <<>> p)

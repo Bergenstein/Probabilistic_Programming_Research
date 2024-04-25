@@ -7,7 +7,7 @@ Reference: This code file is just reimplementation of this paper: [1]
 > import Monadic_Equational_Reasoning 
 
 > class MonadFail' m => MonadExcept m where 
->   catch :: m a -> m a -> m a 
+>   catch :: m a -> m a -> m a -- the first computation might fail and if it does the second computation takes place. At the end, a monadic computation is returned, thanks to the handler (the second computation)
 
 laws:
 
